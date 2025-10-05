@@ -1,256 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Webpage</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="icon" type="image/png" href="image/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Медиазапросы для изменения шрифтов и отступов */
+        @media (max-width: 768px) {
+            .portfolio-title {
+                font-size: 1.5rem;
+            }
+            .sidebar {
+                display: none;
+            }
+        }
+        @media (min-width: 769px) {
+            .portfolio-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-    <div class="logo">
-      <img src="/image/logo.jpg" alt="Logo"> 
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-    </header>
-            <div class="container">
-                <header>
-                    <h1>Header</h1>
-                </header>
-                <sidebar>
-                    <h2>Sidebar</h2>
-                    <p>This is the sidebar content.</p>
-                </sidebar>
-                <main>
-                    <h2>Main Content</h2>
-                    <p>This is the main content area.</p>
 
-                    <!-- Галерея изображений -->
-                    <div class="gallery">
-                        <div class="image-container">
-                            <img src="https://via.placeholder.com/300" alt="Image 1">
-                            <div class="caption">Image 1</div>
-                        </div>
-                        <div class="image-container">
-                            <img src="https://via.placeholder.com/300" alt="Image 2">
-                            <div class="caption">Image 2</div>
-                        </div>
-                        <div class="image-container">
-                            <img src="https://via.placeholder.com/300" alt="Image 3">
-                            <div class="caption">Image 3</div>
-                        </div>
-                        <div class="image-container">
-                            <img src="https://via.placeholder.com/300" alt="Image 4">
-                            <div class="caption">Image 4</div>
-                        </div>
-                        <div class="image-container">
-                            <img src="https://via.placeholder.com/300" alt="Image 5">
-                            <div class="caption">Image 5</div>
-                        </div>
-                        <div class="image-container">
-                            <img src="https://via.placeholder.com/300" alt="Image 6">
-                            <div class="caption">Image 6</div>
-                        </div>
-                        <div class="image-container">
-                            <img src="https://via.placeholder.com/300" alt="Image 7">
-                            <div class="caption">Image 7</div>
-                        </div>
-                        <div class="image-container">
-                            <img src="https://via.placeholder.com/300" alt="Image 8">
-                            <div class="caption">Image 8</div>
-                        </div>
-                        <div class="image-container">
-                            <img src="https://via.placeholder.com/300" alt="Image 9">
-                            <div class="caption">Image 9</div>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Левый блок с проектами -->
+            <div class="col-md-8">
+                <h2 class="portfolio-title">My Projects</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="1.png" class="card-img-top" alt="Project 1">
+                            <div class="card-body">
+                                <h5 class="card-title">go-reloaded</h5>
+                                <p class="card-text">Этот проект включает создание инструмента для редактирования текста на Go, который выполняет различные модификации, такие как преобразование чисел в десятичный формат, изменение регистра, исправление пунктуации и другие.</p>
+                            </div>
                         </div>
                     </div>
-
-                </main>
-                <footer>
-                    <p>Footer</p>
-                </footer>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="2.png" class="card-img-top" alt="Project 2">
+                            <div class="card-body">
+                                <h5 class="card-title">ascii-art-web</h5>
+                                <p class="card-text">Этот проект заключается в создании программы на Go, которая принимает строку в качестве аргумента и выводит её графическое представление с использованием символов ASCII, поддерживая вывод с числами, буквами, пробелами, специальными символами и переносами строк.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="3.png" class="card-img-top" alt="Project 3">
+                            <div class="card-body">
+                                <h5 class="card-title">net-cat</h5>
+                                <p class="card-text">Этот проект включает создание аналога NetCat в архитектуре "сервер-клиент", поддерживающий TCP-соединения между сервером и несколькими клиентами, где клиенты могут обмениваться сообщениями, присоединяться к чату, покидать его, а также получать уведомления о действиях других участников чата.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-    <div class="card-container">
-        <div class="card">
-        <img src="https://volosyzidana.com" alt="Card Image">
-        <h3>Card Title 1</h3>
-        <p>This is some text about the card content. It can be a short description.</p>
-        <button>Read More</button>
-        </div>
-        <div class="card">
-        <img src="https://visokymessi.com" alt="Card Image">
-        <h3>Card Title 2</h3>
-        <p>This is some text about the card content. It can be a short description.</p>
-        <button>Read More</button>
-        </div>
-
-        <div class="card">
-        <img src="https://goatcristiano.com" alt="Card Image">
-        <h3>Card Title 3</h3>
-        <p>This is some text about the card content. It can be a short description.</p>
-        <button>Read More</button>
+            <!-- Правый блок с сайдбаром -->
+            <div class="col-md-4 sidebar">
+                <h3>Contact Info</h3>
+                <p>Email: temirbulatnurzhas@gmail.com</p>
+                <p>Phone: +777777777</p>
+                <h4>About Me</h4>
+                <p>I'm a motivated beginner in IT sphere.</p>
+            </div>
         </div>
     </div>
 
-
-    <div id="header">
-        <h1 id="main-heading">Temirbulat Nurzhas</h1>
-        <h2>IT-2410</h2>
-        <h3>I am 19 y.o.</h3>
-        <p>I love sport and games.</p>
-    </div>
-
-    <div id="main_content">
-        <div class="left-box">
-            <p>Left box content goes here.</p>
-        </div>
-
-        <div class="right-box">
-            <p>Right box content goes here.</p>
-        </div>
-        <h2>My Hobbies</h2>
-        <ol class="lists">
-            <li>Football</li>
-            <li>Running</li>
-            <li>Tennis</li>
-        </ol>
-        <h2>My Favorite Websites</h2>
-        <ul class="lists">
-            <li><a href="https://medium.com/">medium.com</a></li>
-            <li><a href="https://www.youtube.com/">youtube.com</a></li>
-            <li><a href="https://www.kinopoisk.ru/">kinopoisk.ru</a></li>
-        </ul>
-        <hr>
-        <h2 class="highlight">My Photo</h2>
-        <img src="https://blubbyweb.com/wp-content/uploads/2019/02/naruto-thumbs-up.jpg" alt="Naruto" height="300">
-        <br><button id="click_me">Click me!</button>
-        <br>
-        <hr>
-        <h2 class="highlight">My Schedule</h2>
-
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Subject</th>
-                    <th>Day</th>
-                    <th>Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>WEB1</td>
-                    <td>Tuesday</td>
-                    <td>16:00</td>
-                </tr>
-                <tr>
-                    <td>Introduction to Functional Programming</td>
-                    <td>Monday</td>
-                    <td>14:00</td>
-                </tr>
-                <tr>
-                    <td>Russian Language 1</td>
-                    <td>Wednesday</td>
-                    <td>14:00</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>Two-Column Layout</h2>
-        <table border="1" width="100%" cellpadding="10">
-            <tr>
-                <td width="25%"  style="background-color: #f0f0f0;">
-                    <strong>Menu</strong>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Schedule</a></li>
-                        <li><a href="#">Assignments</a></li>
-                        <li><a href="#">Grades</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </td>
-                <td width="75%">
-                    <h3>Welcome to the Student Portal</h3>
-                    <p>I wanna describe my mood with emojis 😊😎🚀</p>
-                </td>
-            </tr>
-        </table>
-        <br>
-    </div>
-
-    <div id="footer">
-        <form>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"> <br><br>
-
-            <label for="email">Email:</label><br>
-            <input type="text" id="email" name="email"> <br><br>
-
-            <label for="color">Favorite Color:</label><br>
-            <input type="text" id="color" name="color"> <br><br>
-
-            <input type="submit" value="Submit">
-        </form>
-        <dl>
-            <dt>HTML</dt>
-            <dd>HyperText Markup Language</dd>
-        </dl>
-    </div>
-
-
-<!-- Portfolio Section -->
-<body class="portfolio">
-    <header class="portfolio-header">
-        <div class="logo">Portfolio</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="portfolio-main">
-        <div class="projects">
-            <div class="project-card">
-                <h3>Project 1</h3>
-                <p>Short description about Project 1.</p>
-                <button>View Details</button>
-            </div>
-            <div class="project-card">
-                <h3>Project 2</h3>
-                <p>Short description about Project 2.</p>
-                <button>View Details</button>
-            </div>
-            <div class="project-card">
-                <h3>Project 3</h3>
-                <p>Short description about Project 3.</p>
-                <button>View Details</button>
-            </div>
-            <div class="project-card">
-                <h3>Project 4</h3>
-                <p>Short description about Project 4.</p>
-                <button>View Details</button>
-            </div>
-        </div>
-
-        <aside class="sidebar">
-            <h3>About Me</h3>
-            <p>This is a short about me section.</p>
-        </aside>
-    </main>
-
-    <footer class="portfolio-footer">
-        <p>© 2025 My Portfolio</p>
+    <footer class="bg-light text-center py-3">
+        <p>&copy; 2025 Portfolio. All rights reserved.</p>
     </footer>
-</body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
